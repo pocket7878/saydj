@@ -2,6 +2,7 @@
   "name": "say-dj",
   "version": "0.1.0",
   "private": true,
+  "main": "dist/main.js",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -10,19 +11,46 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
+    "electron-is": "^3.0.0",
+    "macos-audio-devices": "^1.3.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
-    "typescript": "~3.7.2"
+    "recoil": "^0.0.8",
+    "typescript": "~3.7.2",
+    "uuid": "^8.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "webpack",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "app": "electron-builder --mac --x64"
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "build": {
+    "appId": "jp.poketo7878.joke.saydj",
+    "extraMetadata": {
+      "main": "./dist/main.js"
+    },
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "dist/**/*",
+      "package.json",
+      "yarn.lock"
+    ],
+    "mac": {
+      "identity": "null",
+      "icon": "./src/icon/saydj.icns",
+      "target": [
+        "dir"
+      ]
+    }
   },
   "browserslist": {
     "production": [
@@ -35,5 +63,26 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.10.1",
+    "@types/recoil": "^0.0.0",
+    "@types/uuid": "^8.0.0",
+    "babel": "^6.23.0",
+    "babel-loader": "^8.1.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "css-loader": "^3.5.3",
+    "electron": "^9.0.2",
+    "electron-builder": "^22.7.0",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.3.0",
+    "node-sass": "^4.14.1",
+    "react-svg-loader": "^3.0.3",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-command": "^0.5.0"
   }
 }

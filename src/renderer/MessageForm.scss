@@ -1,0 +1,47 @@
+@import "colors";
+@import "dimens";
+
+.message-form {
+  flex: 0;
+}
+
+.message-form__field {
+  background-color: $primary-base-light;
+  display: block;
+  box-sizing : border-box;
+  width: 100%;
+  border-radius: 8px;
+  resize: vertical;
+  min-height: 48px;
+  padding: $spacing-m;
+  font-size: 14px;
+  margin-bottom: $spacing-m;
+}
+
+.message-form__buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.message-form__button {
+  flex: 2;
+  height: 32px;
+  line-height: 32px;
+  color: $white-100;
+  border-radius: 8px;
+  text-align: center;
+  padding-left: $spacing-m;
+  padding-right: $spacing-m;
+}
+
+.message-form__button:last-child {
+  margin-left: $spacing-m;
+}
+
+.message-form__add-message-button {
+  background-color: $primary;
+}
+
+.message-form__say-button {
+  background-color: $secondary;
+}
