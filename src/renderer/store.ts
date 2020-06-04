@@ -1,5 +1,5 @@
 import { atom, RecoilState } from "recoil";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 export type Message = {
   msg: string;
@@ -11,21 +11,21 @@ export function buildMessage(msg: string): Message {
 }
 
 export const messagesState: RecoilState<Array<Message>> = atom({
-  key: 'messages',
+  key: "messages",
   default: new Array<Message>(),
 });
 
 export type AudioDevice = {
   id: string;
   name: string;
-}
+};
 
 export const audioDevicesState: RecoilState<Array<AudioDevice>> = atom({
-  key: 'audiodevices',
+  key: "audiodevices",
   default: new Array<AudioDevice>(),
 });
 
 export const activeAudioDeviceId: RecoilState<string | null> = atom({
-  key: 'activeAudioDeviceId',
+  key: "activeAudioDeviceId",
   default: null,
 });

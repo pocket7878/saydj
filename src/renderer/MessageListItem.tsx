@@ -1,11 +1,11 @@
-import React, { useCallback } from 'react';
-import { Message, messagesState, activeAudioDeviceId } from './store';
-import { say } from './say_util';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import React, { useCallback } from "react";
+import { Message, messagesState, activeAudioDeviceId } from "./store";
+import { say } from "./say_util";
+import { useRecoilState, useRecoilValue } from "recoil";
 
 type Props = {
   message: Message;
-}
+};
 
 export function MessageListItem(props: Props) {
   const deviceId = useRecoilValue(activeAudioDeviceId);
@@ -21,8 +21,18 @@ export function MessageListItem(props: Props) {
 
   return (
     <div className="message-list__item">
-      <span className="message-list__item__delete-button" onClick={onDeleteClicked}>X</span>
-      <span className="message-list__item__message-text" onClick={onMessageClicked}>{props.message.msg}</span>
+      <span
+        className="message-list__item__delete-button"
+        onClick={onDeleteClicked}
+      >
+        X
+      </span>
+      <span
+        className="message-list__item__message-text"
+        onClick={onMessageClicked}
+      >
+        {props.message.msg}
+      </span>
     </div>
   );
-};
+}
